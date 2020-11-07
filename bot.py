@@ -57,5 +57,13 @@ async def on_ready():
         start = event['start'].get('dateTime', event['start'].get('date'))
         print(start, event['summary'])
 
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    if message.content == '!availablenow':
+        await message.channel.send('exec')
+    if message.content == '!stop': await client.logout()
+
 
 client.run(TOKEN)

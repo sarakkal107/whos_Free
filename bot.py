@@ -65,8 +65,14 @@ async def on_message(message):
     if message.author == client.user:
         return
     if message.content == '!availablenow':
-        await message.channel.send('exec')
+        free = await people_now(message)
+        for name in free:
+            await message.channel.send(name)
     if message.content == '!stop': await client.logout()
 
+
+@client.event
+async def people_now(message):
+    return ['allen', 'emmett']
 
 client.run(TOKEN)

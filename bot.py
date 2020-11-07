@@ -11,6 +11,9 @@ from dotenv import load_dotenv
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
+emmett = 'sob00kp7sf2l7rf2cskulendto@group.calendar.google.com'
+allen = '87aalj3tmll3n7qaq95ib60m0o@group.calendar.google.com'
+sidhu = 'j05ajvtilvu618f16j9msce9gc@group.calendar.google.com'
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -46,7 +49,7 @@ async def on_ready():
     # Call the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     print('Getting the upcoming 10 events')
-    events_result = service.events().list(calendarId='primary', timeMin=now,
+    events_result = service.events().list(calendarId=emmett, timeMin=now,
                                         maxResults=10, singleEvents=True,
                                         orderBy='startTime').execute()
     events = events_result.get('items', [])

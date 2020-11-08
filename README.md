@@ -1,4 +1,4 @@
-# discordCal
+# Who's Free
 
 ## USAGE: 
 

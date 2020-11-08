@@ -91,9 +91,8 @@ async def on_message(message):
     if message.content == '!killBot':
         await message.channel.send("can't kill me im coded different")
 
-    if message.content == '!annoyEshaan':
-        for i in range(30):
-            await message.channel.send('lol')
+    if message.content == '!help' or message.content == '!commands':
+        await message.channel.send('```!freenow - shows you who is not in a meeting\n!freein X - shows who is free in X minutes\n!freefor X - shows you who is free for X minutes```')
     if message.content == '!stop': await client.logout()
 
 

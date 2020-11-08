@@ -82,7 +82,7 @@ async def on_message(message):
 
     if "!freefor" in message.content:
         time = int(message.content.split(" ")[1])
-        free = await people_later(message, time)
+        free = await people_for(message, time)
         await message.channel.send(free)
 
     if message.content == '!freenow':
